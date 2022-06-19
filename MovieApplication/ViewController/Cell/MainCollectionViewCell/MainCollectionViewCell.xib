@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SFPRODISPLAYBOLD.OTF">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCollectionViewCell" id="gTV-IL-0wX" customClass="MainCollectionViewCell" customModule="MovieApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="238"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="238"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSE-oN-n73" customClass="GradientImageView" customModule="MovieApplication" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="238"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JmU-Ju-8do">
+                        <rect key="frame" x="16" y="149.5" width="326" height="46.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02E-7T-KyM">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="24"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJv-OY-gMR">
+                                <rect key="frame" x="0.0" y="32" width="326" height="14.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZSE-oN-n73" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0PJ-LY-qtU"/>
+                <constraint firstItem="ZSE-oN-n73" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GZH-ex-bkR"/>
+                <constraint firstAttribute="trailing" secondItem="ZSE-oN-n73" secondAttribute="trailing" id="XOW-1Q-0bU"/>
+                <constraint firstAttribute="bottom" secondItem="JmU-Ju-8do" secondAttribute="bottom" constant="42" id="Zal-OD-fqk"/>
+                <constraint firstAttribute="bottom" secondItem="ZSE-oN-n73" secondAttribute="bottom" id="bQg-dC-gwO"/>
+                <constraint firstAttribute="trailing" secondItem="JmU-Ju-8do" secondAttribute="trailing" constant="16" id="f12-m7-JtO"/>
+                <constraint firstItem="JmU-Ju-8do" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ixi-Pc-5Qr"/>
+            </constraints>
+            <size key="customSize" width="358" height="238"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="xJv-OY-gMR" id="fnz-kV-PJv"/>
+                <outlet property="posterImageView" destination="ZSE-oN-n73" id="FMt-Nq-ye0"/>
+                <outlet property="titleLabel" destination="02E-7T-KyM" id="wYM-pD-T6S"/>
+            </connections>
+            <point key="canvasLocation" x="360.86956521739131" y="137.94642857142856"/>
+        </collectionViewCell>
+    </objects>
+</document>
