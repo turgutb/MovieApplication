@@ -155,13 +155,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Fj-95-xUh" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="450" height="563.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="563.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPg-xq-Hrl">
-                                                <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAY-g2-HBQ" customClass="GradientImageView" customModule="MovieApplication" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="256"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -174,7 +174,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTQ-fk-zae">
-                                                <rect key="frame" x="0.0" y="272" width="450" height="24"/>
+                                                <rect key="frame" x="0.0" y="272" width="414" height="24"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yCe-VR-Ysu">
                                                         <rect key="frame" x="16" y="0.0" width="236.5" height="24"/>
@@ -239,19 +239,20 @@
                                                     <constraint firstItem="yCe-VR-Ysu" firstAttribute="leading" secondItem="zTQ-fk-zae" secondAttribute="leading" constant="16" id="FWr-fd-tbg"/>
                                                     <constraint firstAttribute="bottom" secondItem="yCe-VR-Ysu" secondAttribute="bottom" id="Pmk-L5-MOt"/>
                                                     <constraint firstItem="yCe-VR-Ysu" firstAttribute="top" secondItem="zTQ-fk-zae" secondAttribute="top" id="SAj-Pc-HKK"/>
+                                                    <constraint firstAttribute="width" constant="250" id="dis-WO-1kh"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="upM-nB-O4n">
-                                                <rect key="frame" x="16" y="312" width="418" height="50"/>
+                                                <rect key="frame" x="16" y="312" width="382" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8t-0z-EEI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="418" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
                                                         <color key="textColor" name="TextBlack"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToK-IQ-s4a">
-                                                        <rect key="frame" x="0.0" y="16" width="418" height="34"/>
+                                                        <rect key="frame" x="0.0" y="16" width="382" height="34"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" name="TextBlack"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
@@ -284,18 +285,27 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="pa1-fx-pge"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="NiT-lY-SAh"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="EzW-1l-72i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OV7-Hv-l9s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WAt-qo-xVp" firstAttribute="top" secondItem="OV7-Hv-l9s" secondAttribute="top" id="0cO-ym-i0P"/>
+                            <constraint firstItem="EzW-1l-72i" firstAttribute="top" secondItem="8nq-NQ-LIv" secondAttribute="top" id="BtQ-DF-Onx"/>
+                            <constraint firstItem="EzW-1l-72i" firstAttribute="leading" secondItem="OV7-Hv-l9s" secondAttribute="leading" id="CHf-nR-KNa"/>
+                            <constraint firstItem="OV7-Hv-l9s" firstAttribute="trailing" secondItem="EzW-1l-72i" secondAttribute="trailing" id="Fye-eh-0UF"/>
                             <constraint firstAttribute="bottom" secondItem="WAt-qo-xVp" secondAttribute="bottom" id="bF2-lV-BfE"/>
                             <constraint firstItem="WAt-qo-xVp" firstAttribute="trailing" secondItem="OV7-Hv-l9s" secondAttribute="trailing" id="emu-O6-xwf"/>
                             <constraint firstItem="WAt-qo-xVp" firstAttribute="leading" secondItem="OV7-Hv-l9s" secondAttribute="leading" id="iK1-7h-3LB"/>
+                            <constraint firstAttribute="bottom" secondItem="EzW-1l-72i" secondAttribute="bottom" id="z4i-xr-dpO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PNk-d4-Qmn"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="EzW-1l-72i" id="r7x-Hp-wvT"/>
                         <outlet property="descriptionLabel" destination="ToK-IQ-s4a" id="XPX-gO-2gJ"/>
                         <outlet property="imdbImageView" destination="ytf-do-3M6" id="kZ3-45-QQy"/>
                         <outlet property="posterImageView" destination="BAY-g2-HBQ" id="fbV-Kd-36c"/>

@@ -44,7 +44,6 @@
 		816D706B285E07A4005AF950 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D7068285E07A4005AF950 /* Type.swift */; };
 		816D7072285E07D3005AF950 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D706D285E07D2005AF950 /* APIRequests.swift */; };
 		816D7073285E07D3005AF950 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D706E285E07D2005AF950 /* NetworkResponse.swift */; };
-		816D7074285E07D3005AF950 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D706F285E07D2005AF950 /* NetworkMonitor.swift */; };
 		816D7075285E07D3005AF950 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D7070285E07D2005AF950 /* NetworkError.swift */; };
 		816D707B285E08CD005AF950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816D707A285E08CD005AF950 /* Main.storyboard */; };
 		816D7080285E0B7A005AF950 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D707E285E0B7A005AF950 /* MainCollectionViewCell.swift */; };
@@ -61,7 +60,6 @@
 		816D70A0285E3289005AF950 /* UpcomingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D709F285E3289005AF950 /* UpcomingResponse.swift */; };
 		816D70A2285E32A4005AF950 /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D70A1285E32A4005AF950 /* NowPlaying.swift */; };
 		816D70A6285E45EE005AF950 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D70A5285E45EE005AF950 /* StringExtension.swift */; };
-		816D70A8285E7CC6005AF950 /* ObservableBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D70A7285E7CC6005AF950 /* ObservableBind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +102,6 @@
 		816D7068285E07A4005AF950 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		816D706D285E07D2005AF950 /* APIRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		816D706E285E07D2005AF950 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
-		816D706F285E07D2005AF950 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		816D7070285E07D2005AF950 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		816D707A285E08CD005AF950 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		816D707E285E0B7A005AF950 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -121,7 +118,6 @@
 		816D709F285E3289005AF950 /* UpcomingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingResponse.swift; sourceTree = "<group>"; };
 		816D70A1285E32A4005AF950 /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
 		816D70A5285E45EE005AF950 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		816D70A7285E7CC6005AF950 /* ObservableBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableBind.swift; sourceTree = "<group>"; };
 		B761AC3BD07F813B07DA696C /* Pods-MovieApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApplication.debug.xcconfig"; path = "Target Support Files/Pods-MovieApplication/Pods-MovieApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		EABD246CC8943F005B047540 /* Pods-MovieApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApplication.release.xcconfig"; path = "Target Support Files/Pods-MovieApplication/Pods-MovieApplication.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +193,15 @@
 			path = "SF Pro Text";
 			sourceTree = "<group>";
 		};
+		81117CB7285F7479009A9560 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				816D704B285E058A005AF950 /* AppDelegate.swift */,
+				816D704D285E058A005AF950 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		816D703F285E058A005AF950 = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +225,7 @@
 			children = (
 				816D707A285E08CD005AF950 /* Main.storyboard */,
 				816D7056285E058C005AF950 /* LaunchScreen.storyboard */,
-				816D704B285E058A005AF950 /* AppDelegate.swift */,
-				816D704D285E058A005AF950 /* SceneDelegate.swift */,
+				81117CB7285F7479009A9560 /* Delegate */,
 				816D706C285E07BF005AF950 /* WebServicee */,
 				816D7065285E0796005AF950 /* Helpers */,
 				816D7079285E0811005AF950 /* Model */,
@@ -241,7 +245,6 @@
 				816D7066285E07A4005AF950 /* APIConstants.swift */,
 				816D7067285E07A4005AF950 /* ImageLoader.swift */,
 				816D7068285E07A4005AF950 /* Type.swift */,
-				816D70A7285E7CC6005AF950 /* ObservableBind.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -251,7 +254,6 @@
 			children = (
 				816D706D285E07D2005AF950 /* APIRequests.swift */,
 				816D7070285E07D2005AF950 /* NetworkError.swift */,
-				816D706F285E07D2005AF950 /* NetworkMonitor.swift */,
 				816D706E285E07D2005AF950 /* NetworkResponse.swift */,
 			);
 			path = WebServicee;
@@ -260,9 +262,9 @@
 		816D7077285E07EF005AF950 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				816D707C285E0A4A005AF950 /* Cell */,
 				816D7090285E10DC005AF950 /* MainViewController.swift */,
 				816D7092285E10EB005AF950 /* DetailViewController.swift */,
+				816D707C285E0A4A005AF950 /* Cell */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -476,7 +478,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				816D7072285E07D3005AF950 /* APIRequests.swift in Sources */,
-				816D70A8285E7CC6005AF950 /* ObservableBind.swift in Sources */,
 				816D7073285E07D3005AF950 /* NetworkResponse.swift in Sources */,
 				816D7089285E0C1A005AF950 /* MovieTableViewCell.swift in Sources */,
 				816D7069285E07A4005AF950 /* APIConstants.swift in Sources */,
@@ -489,7 +490,6 @@
 				816D7093285E10EB005AF950 /* DetailViewController.swift in Sources */,
 				816D7098285E30B8005AF950 /* MainViewModel.swift in Sources */,
 				816D704E285E058A005AF950 /* SceneDelegate.swift in Sources */,
-				816D7074285E07D3005AF950 /* NetworkMonitor.swift in Sources */,
 				816D7091285E10DC005AF950 /* MainViewController.swift in Sources */,
 				816D7080285E0B7A005AF950 /* MainCollectionViewCell.swift in Sources */,
 				816D70A0285E3289005AF950 /* UpcomingResponse.swift in Sources */,
@@ -637,7 +637,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2YUU63J77U;
+				DEVELOPMENT_TEAM = 7292WM7M53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -650,7 +650,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = movie.MovieApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.movie.MovieApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -668,7 +668,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2YUU63J77U;
+				DEVELOPMENT_TEAM = 7292WM7M53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieApplication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -681,7 +681,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = movie.MovieApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.movie.MovieApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

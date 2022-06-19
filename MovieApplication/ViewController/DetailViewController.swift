@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var imdbImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
     // MARK: - Properties
@@ -44,6 +45,7 @@ class DetailViewController: UIViewController {
         setImage()
 
     }
+    
     private func getData() {
         viewModel.getMovieDetail()
     }
@@ -60,7 +62,7 @@ class DetailViewController: UIViewController {
     }
 }
 // MARK: - Extension
-extension DetailViewController: DetailViewModelProtocol {
+extension DetailViewController: DetailViewModelProtocol {    
     func setData() {
         DispatchQueue.main.async {
             if let data = self.viewModel.movieDetail {
@@ -73,4 +75,30 @@ extension DetailViewController: DetailViewModelProtocol {
             }
         }
     }
+    
+    func startIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator?.startAnimating()
+        }
+    }
+    
+    func stopIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator?.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
+    }
+    
+    func showPopup() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Hata", message: "Data yüklenemedi.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: {_ in
+                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+    }
+
 }

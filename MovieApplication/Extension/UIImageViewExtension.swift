@@ -25,7 +25,7 @@ class GradientImageView: UIImageView{
         }
     }
     
-    @IBInspectable var gradientAlpha: CGFloat = 0.4{
+    @IBInspectable var gradientAlpha: CGFloat = 0.4 {
         didSet {
             updateGradient()
         }

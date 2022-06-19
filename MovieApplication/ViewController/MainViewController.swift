@@ -11,13 +11,12 @@ class MainViewController: UIViewController {
     
     // MARK: - UI Elements
 
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var tableViewHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+
     // MARK: - Properties
     let viewModel = MainViewModel()
     var timer = Timer()
@@ -102,19 +101,19 @@ class MainViewController: UIViewController {
 }
 // MARK: - Extension
 
+// MARK: Extension - UITableView
+
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return viewModel.upComingNumberOfRow()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifiers.movieTableViewCell) as! MovieTableViewCell
-        
         let index = viewModel.upComingCellForRow(at: indexPath.row)
-        
         cell.configure(imageURL: index.posterPath, title: index.title, description: index.overview, date: index.releaseDate)
-
-        print("tableview indexPath.row", indexPath.row)
         
         return cell
     }
@@ -129,6 +128,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// MARK:  Extension - UICollectionView
+
+
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
@@ -140,10 +142,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CellIdentifiers.mainCollectionCell, for: indexPath) as! MainCollectionViewCell
-        
         let index = viewModel.nowPlayingCellForRow(at: indexPath.row)
-        
         cell.configure(imageURL: index.posterPath, title: index.title, description: index.overview)
 
         return cell
@@ -157,14 +158,17 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 }
 
+// MARK:  Extension - UIScrollView
+
+
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         switch scrollView {
         case self.scrollView:
-            if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && viewModel.isPagination == false) {
-                viewModel.isPagination = true
-                viewModel.upComingPage += 1
+            if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && viewModel.isPagination == true) {
+                    viewModel.isPagination = false
+                    viewModel.getUpComing(page: viewModel.upComingPage)
                 tableView.tableFooterView = createSpinnerFooter()
             }
         case collectionView:
@@ -177,6 +181,9 @@ extension MainViewController: UIScrollViewDelegate {
  
     }
 }
+
+// MARK:  Extension - MainViewModelProtocol
+
 extension MainViewController: MainViewModelProtocol {
     func setSlider() {
         DispatchQueue.main.async {
@@ -191,6 +198,9 @@ extension MainViewController: MainViewModelProtocol {
         DispatchQueue.main.async {
             self.tableView.tableFooterView = nil
             self.tableView.reloadData()
+            self.tableViewHeightConstant.constant = (CGFloat(self.viewModel.nowPlayingMovies.count + 1) * 140)
+            self.tableView.sizeToFit()
+            self.tableView.layoutIfNeeded()
         }
     }
     func reloadCollectionView() {
@@ -199,11 +209,18 @@ extension MainViewController: MainViewModelProtocol {
 
         }
     }
-    func setTableViewHeight() {
+    
+    func showPopup() {
         DispatchQueue.main.async {
-            self.tableViewHeightConstant.constant = (CGFloat(self.viewModel.nowPlayingMovies.count + 1) * 140)
-            self.tableView.sizeToFit()
-            self.tableView.layoutIfNeeded()
+            let alert = UIAlertController(title: "Hata", message: "Data yüklenemedi.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: {_ in
+                if self.viewModel.nowPlayingNumberOfRow() == 0 && self.viewModel.upComingNumberOfRow() == 0 {
+                    exit(0)
+                }
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return
         }
     }
 }

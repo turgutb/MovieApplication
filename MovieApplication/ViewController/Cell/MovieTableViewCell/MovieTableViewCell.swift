@@ -22,7 +22,6 @@ class MovieTableViewCell: UITableViewCell {
     
     func setupView(){
         posterImageView.layer.cornerRadius = 8
-        titleLabel.font = UIFont(name: "SFProText-Bold", size: 15)
         selectionStyle = .none
     }
     
